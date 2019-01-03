@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ly.user.dao.UserMapper" >
+
+  <resultMap id="BaseResultMap" type="com.ly.user.entity.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="sign_status" property="signStatus" jdbcType="INTEGER" />
+  	<result column="password" property="password" jdbcType="VARCHAR" />
+  	<result column="user_aliase" property="userAliase" jdbcType="VARCHAR" />
+  	<result column="user_name" property="userName" jdbcType="VARCHAR" />
+  	<result column="gender" property="gender" jdbcType="INTEGER" />
+  	<result column="head_pic" property="headPic" jdbcType="VARCHAR" />
+  	<result column="user_birthday" property="userBirthday" jdbcType="TIMESTAMP" />
+  	<result column="renzheng_phone" property="renzhengPhone" jdbcType="INTEGER" />
+  	<result column="user_type" property="userType" jdbcType="INTEGER" />
+  	<result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+  	<result column="renzheng_qq" property="renzhengQq" jdbcType="VARCHAR" />
+  	<result column="user_qq" property="userQq" jdbcType="VARCHAR" />
+  	<result column="user_telephone" property="userTelephone" jdbcType="VARCHAR" />
+  	<result column="user_e_mail" property="userEMail" jdbcType="VARCHAR" />
+  	<result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+  	<result column="certificate_id" property="certificateId" jdbcType="INTEGER" />
+  	<result column="user_certificate" property="userCertificate" jdbcType="VARCHAR" />
+  	<result column="cardtyperemark" property="cardtyperemark" jdbcType="VARCHAR" />
+  	<result column="GrantDept" property="grantdept" jdbcType="VARCHAR" />
+  	<result column="CardAddress" property="cardaddress" jdbcType="VARCHAR" />
+  	<result column="user_id_card" property="userIdCard" jdbcType="VARCHAR" />
+  	<result column="Nation" property="nation" jdbcType="VARCHAR" />
+  	<result column="UserLifeBegintime" property="userlifebegintime" jdbcType="TIMESTAMP" />
+  	<result column="UserLifeEndtime" property="userlifeendtime" jdbcType="TIMESTAMP" />
+  	<result column="user_Registered" property="userRegistered" jdbcType="TIMESTAMP" />
+  	<result column="certificate_image" property="certificateImage" jdbcType="VARCHAR" />
+  	<result column="certificate_status" property="certificateStatus" jdbcType="INTEGER" />
+  	<result column="user_login_type" property="userLoginType" jdbcType="INTEGER" />
+  	<result column="login_type_note" property="loginTypeNote" jdbcType="VARCHAR" />
+  	<result column="office_position_data_id" property="officePositionDataId" jdbcType="INTEGER" />
+  	<result column="department_id" property="departmentId" jdbcType="INTEGER" />
+  	<result column="gesture_password" property="gesturePassword" jdbcType="VARCHAR" />
+  	<result column="user_blacklist" property="userBlacklist" jdbcType="INTEGER" />
+  	<result column="note" property="note" jdbcType="LONGVARCHAR" />
+  	<result column="invite_id" property="inviteId" jdbcType="INTEGER" />
+  	<result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+  	<result column="newTime" property="newtime" jdbcType="TIMESTAMP" />
+  	<result column="state" property="state" jdbcType="INTEGER" />
+  	<result column="version" property="version" jdbcType="INTEGER" />
+  	<result column="createid" property="createid" jdbcType="INTEGER" />
+  	<result column="biz_no" property="bizNo" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  
+  <sql id="Base_Column_List" >
+    id,sign_status,password,user_aliase,user_name,gender,head_pic,user_birthday,renzheng_phone,user_type,user_phone,renzheng_qq,user_qq,user_telephone,user_e_mail,user_address,certificate_id,user_certificate,cardtyperemark,GrantDept,CardAddress,user_id_card,Nation,UserLifeBegintime,UserLifeEndtime,user_Registered,certificate_image,certificate_status,user_login_type,login_type_note,office_position_data_id,department_id,gesture_password,user_blacklist,note,invite_id,createTime,newTime,state,version,createid,biz_no
+  </sql>
+	
+	 <select id="selectByPhonePassword" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cxkj_center_user 
+    where state=0
+    <if test="userPhone != null" >
+	 and user_phone =#{userPhone}
+	</if>
+	<if test="password != null" >
+	 and password =#{password}
+	</if>
+  </select>
+  <select id="selectUserInfoById" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cxkj_center_user 
+    where 
+	id = #{id} and
+	 state=0
+  </select>
+</mapper>
