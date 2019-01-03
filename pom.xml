@@ -58,5 +58,6 @@
 		<module>spring-boot-ly-movie-ribbon-hystrix</module>
 		<module>spring-boot-ly-movie-ribbon-feign-hystrix</module>
 		<module>spring-boot-ly-movie-ribbon-feign-hystrix2</module>
+		<module>spring-boot-ly-movie-hystrix-dashboard</module>
 	  </modules>
 </project>
