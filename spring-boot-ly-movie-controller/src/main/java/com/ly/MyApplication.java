@@ -12,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class MyApplication {
 
 	public static void main(String[] args){
+		//123admin提交
 		SpringApplication.run(MyApplication.class, args);
 	}
 }
