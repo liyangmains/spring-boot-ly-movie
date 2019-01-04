@@ -1,5 +1,5 @@
 server:
-  port: 8061
+  port: 8065
 spring:  
   datasource:
    url: jdbc:mysql://localhost:3306/jzy_cxkj

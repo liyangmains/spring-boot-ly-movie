@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: movie-turbine
+server:
+  port: 8731
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://192.168.20.191:8761/eureka/
+#      defaultZone: http://admin:password123@localhost:${server.port}/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: movie-ribbon-hystrix,movie-ribbon-hystrix2
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+  instanceUrlSuffix: /hystrix.stream
