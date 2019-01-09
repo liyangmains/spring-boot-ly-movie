@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: gateway-zuul
+server:
+  port: 8082
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://192.168.20.191:8761/eureka/
+#      defaultZone: http://admin:password123@localhost:${server.port}/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    abc:
+      path: /hystrix/**
+      service-id: movie-ribbon-hystrix2
+      strip-prefix: false #集群movie-ribbon-hystrix2设置了context-path使用
+     

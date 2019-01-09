@@ -16,4 +16,5 @@ turbine:
   app-config: movie-ribbon-hystrix,movie-ribbon-hystrix2
   cluster-name-expression: new String("default")
   combine-host-port: true
+#  instanceInsertPort: false
   instanceUrlSuffix: /hystrix.stream

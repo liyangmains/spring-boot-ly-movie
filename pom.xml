@@ -26,6 +26,7 @@
 <!-- 					<artifactId>jackson-databind</artifactId> -->
 <!-- 					<version>2.7.4</version> -->
 <!-- 				</dependency> -->
+<!-- 			         <version>Finchley.RC2</version> -->
 				<dependency>
 					 <groupId>org.springframework.cloud</groupId>
 			         <artifactId>spring-cloud-dependencies</artifactId>
@@ -59,6 +60,8 @@
 		<module>spring-boot-ly-movie-ribbon-feign-hystrix</module>
 		<module>spring-boot-ly-movie-ribbon-feign-hystrix2</module>
 		<module>spring-boot-ly-movie-hystrix-dashboard</module>
+		<module>spring-boot-ly-movie-gateway-zuul</module>
+		<module>spring-boot-ly-movie-gateway-zuul-fallback</module>
 		<module>spring-boot-ly-movie-turbine</module>
 	  </modules>
 </project>
