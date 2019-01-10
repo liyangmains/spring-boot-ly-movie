@@ -17,8 +17,7 @@ public class ZullFallBackBean implements ZuulFallbackProvider{
 	@Override
 	public String getRoute() {
 		// TODO Auto-generated method stub
-//		return "movie-ribbon-hystrix2"; //代理服务ID,*或者null表示所有代理服务的ID
-		return null;
+		return "movie-ribbon-hystrix"; //代理服务ID,*或者null表示所有代理服务的ID
 	}
 
 	@Override
@@ -35,7 +34,8 @@ public class ZullFallBackBean implements ZuulFallbackProvider{
 			
 			@Override
 			public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream(("后台服务请求错误"+ZullFallBackBean.this.getRoute().toString()).getBytes()); //返回前端的内容
+				System.out.println(("后台服务请求错误"+ZullFallBackBean.this.getRoute()).toString());
+                return new ByteArrayInputStream(("后台服务请求错误"+ZullFallBackBean.this.getRoute()).toString().getBytes()); //返回前端的内容
 			}
 			
 			@Override
