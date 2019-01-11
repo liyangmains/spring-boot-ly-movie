@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  security:
+    enabled: true
+    user:
+      name: liyangmains
+      password: 123
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:liyangmains/spring-cloud-config-server
+          search-paths:
+          - foo
+          - bar
+#          spring cloud config git配置仓库文件内容信息加密
+#          https://blog.csdn.net/u014792352/article/details/73163714
+  application:
+    name: movie-config-service
+eureka:
+  client:
+    service-url:
+       defaultZone: http://192.168.20.191:8761/eureka/
+#      defaultZone: http://admin:password123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}

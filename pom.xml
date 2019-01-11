@@ -63,5 +63,7 @@
 		<module>spring-boot-ly-movie-gateway-zuul</module>
 		<module>spring-boot-ly-movie-gateway-zuul-fallback</module>
 		<module>spring-boot-ly-movie-turbine</module>
+		<module>spring-boot-ly-movie-config-service</module>
+		<module>spring-boot-ly-movie-config-client</module>
 	  </modules>
 </project>

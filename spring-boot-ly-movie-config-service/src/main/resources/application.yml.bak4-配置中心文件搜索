@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:liyangmains/spring-cloud-config-server
+          #搜索文件夹目录下的文件
+          search-paths:
+          - foo
+          - bar
+          repos: 
+            spring-cloud-config-server-dev:
+              pattern: application*/dev*,special*/dev*
+              uri: git@github.com:liyangmains/spring-cloud-config-server-dev
+            spring-cloud-config-server-prod:
+              pattern: application*/dev*
+              uri: git@github.com:liyangmains/spring-cloud-config-server-prod
+#          模式匹配
+#          服务中心分别是 spring-cloud-config-server,spring-cloud-config-server-dev,spring-cloud-config-server-prod
+#          请求方式：
+#          http://localhost:8081/master/spring-cloud-config-server-default.yml
+#          http://localhost:8081/master/spring-cloud-config-server-dev-default.yml
+#          http://localhost:8081/master/spring-cloud-config-server-prod-default.yml

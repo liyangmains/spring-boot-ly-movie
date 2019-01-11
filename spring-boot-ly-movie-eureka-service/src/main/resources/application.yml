@@ -1,11 +1,11 @@
 spring:
   application:
     name: eureka-service
-# security:
-#    enabled: true
-#    user:
-#      name: admin
-#      password: password123
+  security:
+    enabled: true
+    user:
+      name: admin
+      password: password123
 server:
   port: 8761
 eureka:

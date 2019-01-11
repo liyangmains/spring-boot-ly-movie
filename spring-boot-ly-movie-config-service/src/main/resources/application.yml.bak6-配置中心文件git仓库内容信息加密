@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:liyangmains/spring-cloud-config-server
+          search-paths:
+          - foo
+          - bar
+#          spring cloud config git配置仓库文件内容信息加密
+#          https://blog.csdn.net/u014792352/article/details/73163714

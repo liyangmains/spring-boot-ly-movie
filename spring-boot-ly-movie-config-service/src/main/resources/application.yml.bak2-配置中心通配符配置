@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:liyangmains/{application}
+#          {application}通配符方式可以任意切换配置服务中心微服务
+#          服务中心分别是 spring-cloud-config-server,spring-cloud-config-server-dev,spring-cloud-config-server-prod
+#          请求方式：
+#          http://localhost:8081/master/spring-cloud-config-server-default.yml
+#          http://localhost:8081/master/spring-cloud-config-server-dev-default.yml
+#          http://localhost:8081/master/spring-cloud-config-server-prod-default.yml
