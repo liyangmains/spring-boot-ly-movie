@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      uri: http://liyangmains:123@192.168.20.191:8081/
+#      username: liyangmains
+#      password: 123
+      label: master
+      profile: dev
+  application:
+    name: foo

@@ -65,5 +65,6 @@
 		<module>spring-boot-ly-movie-turbine</module>
 		<module>spring-boot-ly-movie-config-service</module>
 		<module>spring-boot-ly-movie-config-client</module>
+		<module>spring-boot-ly-movie-config-client-refresh</module>
 	  </modules>
 </project>
