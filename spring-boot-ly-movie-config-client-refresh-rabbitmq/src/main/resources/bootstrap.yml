@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+#      discovery:
+#        enabled: true
+#        service-id: movie-config-service
+      uri: http://localhost:8081
+      username: liyangmains
+      password: 123
+      label: master
+      profile: dev
+  application:
+    name: foo1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+    
+eureka:
+  client:
+    service-url:
+       defaultZone: http://192.168.20.191:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}

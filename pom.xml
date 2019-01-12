@@ -66,5 +66,7 @@
 		<module>spring-boot-ly-movie-config-service</module>
 		<module>spring-boot-ly-movie-config-client</module>
 		<module>spring-boot-ly-movie-config-client-refresh</module>
+		<module>spring-boot-ly-movie-config-client-refresh-rabbitmq</module>
+		<module>spring-boot-ly-movie-config-service-refresh-rabbitmq</module>
 	  </modules>
 </project>
