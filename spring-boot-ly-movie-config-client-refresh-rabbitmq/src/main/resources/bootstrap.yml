@@ -18,6 +18,8 @@ spring:
     port: 5672
     username: guest
     password: guest
+#需要访问 http://192.168.20.191:8080/actuator/bus-refresh 
+#自动更新需要git当前使用的配置中心配置webhooks需要连接外网，不能设置localhost
 management:
   endpoints:
     web:
