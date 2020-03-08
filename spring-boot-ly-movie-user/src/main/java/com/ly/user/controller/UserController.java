@@ -23,6 +23,12 @@ public class UserController {
 	@Autowired
 	private EurekaClient eurekaClient;
 
+	@GetMapping("/ip")
+	public String getIp(HttpServletRequest request){
+		String remoteAddr = request.getRemoteAddr();
+		String ip = request.getHeader("X-Real_IP");
+		return remoteAddr+"=>"+ip;
+	}
 	@GetMapping("/login")
 	public ResultBean getUserStr(HttpServletRequest request){
 //		request.setAttribute("userPhone", "13246715680");
