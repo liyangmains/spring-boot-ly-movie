@@ -9,9 +9,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @EnableEurekaClient
-@MapperScan(value = {"com.ly.*.dao"})
+@MapperScan(value = {"coxm.ly.*.dao"})
 @RestController
 public class MyApplication {
 	

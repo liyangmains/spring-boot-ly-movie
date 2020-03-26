@@ -68,5 +68,8 @@
 		<module>spring-boot-ly-movie-config-client-refresh</module>
 		<module>spring-boot-ly-movie-config-client-refresh-rabbitmq</module>
 		<module>spring-boot-ly-movie-config-service-refresh-rabbitmq</module>
+		<module>spring-boot-ly-movie-stream-pub-kafka</module>
+		<module>spring-boot-ly-movie-stream-sub1-kafka</module>
+		<module>spring-boot-ly-movie-stream-sub2-kafka</module>
 	  </modules>
 </project>
