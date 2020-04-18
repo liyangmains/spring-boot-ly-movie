@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ly</groupId>
+    <artifactId>spring-boot-ly-movie</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>spring-boot-ly-movie-threadpool</artifactId>
+  <packaging>jar</packaging>
+  
+  <dependencies>
+  			<dependency>
+	  			<groupId>com.ly</groupId>
+	  			<artifactId>spring-boot-ly-movie-core</artifactId>
+	  			<version>0.0.1-SNAPSHOT</version>
+	  		</dependency>
+	  		<!-- 添加内置tomcat web <scope>test</scope> 添加此属性会导致HttpServletRequest获取不到-->
+			 <dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>compile</scope>
+			</dependency>
+			<!-- 添加内置tomcat -->
+			
+			<!--禁用内置tomcat  web <scope>test</scope> 添加此属性会导致HttpServletRequest获取不到-->
+			<!--<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>provided</scope>
+			</dependency>-->
+			<!-- 禁用内置tomcat-->
+			<dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>javax.servlet-api</artifactId>
+	        </dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			</dependency>
+			 <!-- 用于注册中心访问账号认证 -->
+			<dependency>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-starter-actuator</artifactId>
+			</dependency>
+  </dependencies>
+</project>

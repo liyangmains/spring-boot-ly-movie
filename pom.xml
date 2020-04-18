@@ -71,5 +71,6 @@
 		<module>spring-boot-ly-movie-stream-sub1-kafka</module>
 		<module>spring-boot-ly-movie-stream-sub2-kafka</module>
 		<module>spring-boot-ly-movie-txlcn-tm</module>
+		<module>spring-boot-ly-movie-threadpool</module>
 	  </modules>
 </project>
