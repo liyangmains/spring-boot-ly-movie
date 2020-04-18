@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ly</groupId>
+    <artifactId>spring-boot-ly-movie</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>spring-boot-ly-movie-txlcn-tm</artifactId>
+  <packaging>war</packaging>
+  
+  <properties>
+  	<codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
+  </properties>
+  <dependencies>
+	  		<!-- 添加内置tomcat web <scope>test</scope> 添加此属性会导致HttpServletRequest获取不到-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>compile</scope>
+			</dependency>
+			<!-- 添加内置tomcat -->
+			
+			<!--禁用内置tomcat  web <scope>test</scope> 添加此属性会导致HttpServletRequest获取不到-->
+			<!-- <dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<scope>provided</scope>
+			</dependency> -->
+			<!-- 禁用内置tomcat-->
+			<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-tm</artifactId>
+			<version>5.0.2.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>mysql</groupId>
+					<artifactId>mysql-connector-java</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-jpa</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-web</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-redis</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-actuator</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-logger</artifactId>
+			<version>5.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-common</artifactId>
+			<version>5.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-txmsg-netty</artifactId>
+			<version>5.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-txmsg</artifactId>
+			<version>5.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbutils</groupId>
+			<artifactId>commons-dbutils</artifactId>
+			<version>1.7</version>
+		</dependency>
+  </dependencies>
+</project>

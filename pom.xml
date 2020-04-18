@@ -70,5 +70,6 @@
 		<module>spring-boot-ly-movie-stream-pub-kafka</module>
 		<module>spring-boot-ly-movie-stream-sub1-kafka</module>
 		<module>spring-boot-ly-movie-stream-sub2-kafka</module>
+		<module>spring-boot-ly-movie-txlcn-tm</module>
 	  </modules>
 </project>
