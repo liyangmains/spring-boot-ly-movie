@@ -16,7 +16,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 //		SpringApplication.run(MyApplication.class,args);
 //	}
 //}
-//测试代码连接
 @SpringBootApplication
 @MapperScan(value = {"com.ly.*.dao"})
 public class MyApplication extends SpringBootServletInitializer{
