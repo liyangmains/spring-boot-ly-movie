@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ly.coupon.dao.CouponMapper" >
+
+  <resultMap id="BaseResultMap" type="com.ly.coupon.entity.Coupon" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+  	<result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+  	<result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+  	<result column="newTime" property="newTime" jdbcType="TIMESTAMP" />
+  	<result column="state" property="state" jdbcType="INTEGER" />
+  	<result column="version" property="version" jdbcType="INTEGER" />
+  	<result column="createid" property="createid" jdbcType="INTEGER" />
+  </resultMap>
+  
+  
+  <sql id="Base_Column_List" >
+    id,user_id,coupon_name,state,createTime,newTime,version,createid
+  </sql>
+	<insert id="insertBatchCouponUserRecord">
+		insert into coupon_user_record
+		(
+			user_id,coupon_name,state,createTime,newTime,version,createid
+		)
+		values
+		<foreach collection="couponUserList" item="coupon" separator=",">
+			(
+				#{coupon.userId},
+				#{coupon.couponName},
+				#{coupon.state},
+				#{coupon.createTime},
+				#{coupon.newTime},
+				#{coupon.version},
+				#{coupon.createid}
+			)
+		</foreach>
+	</insert>
+</mapper>
